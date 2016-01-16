@@ -1,9 +1,11 @@
 package com.example.telematica.uiappexample.models;
 
+import com.example.telematica.uiappexample.models.contract.LibroInt;
+
 /**
  * Created by franciscocabezas on 12/11/15.
  */
-public class Libro {
+public class Libro implements LibroInt{
 
     private int id;
     private String nombre;

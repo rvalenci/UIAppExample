@@ -1,4 +1,6 @@
-package com.example.telematica.uiappexample.connection;
+package com.example.telematica.uiappexample.presenters;
+
+import com.example.telematica.uiappexample.presenters.contract.HSCInterface;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +15,7 @@ import java.net.URL;
 /**
  * Created by franciscocabezas on 12/4/15.
  */
-public class HttpServerConnection {
+public class HttpServerConnection implements HSCInterface {
 
     public String connectToServer(String myUrl, int timeOut){
         try {

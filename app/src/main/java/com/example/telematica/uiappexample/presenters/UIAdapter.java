@@ -1,4 +1,5 @@
-package com.example.telematica.uiappexample;
+package com.example.telematica.uiappexample.presenters;
+
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -6,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.example.telematica.uiappexample.R;
 import com.example.telematica.uiappexample.models.Libro;
 
 import java.util.List;
@@ -13,7 +15,7 @@ import java.util.List;
 /**
  * Created by franciscocabezas on 11/20/15.
  */
-public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder> {
+public class UIAdapter extends RecyclerView.Adapter<UIAdapter.ViewHolder>{
     private List<Libro> mDataset;
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
