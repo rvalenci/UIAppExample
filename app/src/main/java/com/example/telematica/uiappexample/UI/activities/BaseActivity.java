@@ -18,15 +18,15 @@ public class BaseActivity extends AppCompatActivity {
         switchContent(fragment, addBackStack, -1, -1);
     }
 
-    public void switchContent (Fragment fragment, String addBackStack, int In, int Out){
+    public void switchContent (Fragment fragment, String addBackStack, int AIn, int AOut){
         try{
             final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
 
-            if (In > 0 && Out > 0)
-                fragmentTransaction.setCustomAnimations(In, Out);
+            if (AIn > 0 && AOut > 0)
+                fragmentTransaction.setCustomAnimations(AIn, AOut);
 
             if(addBackStack != null)
-                fragmentTransaction.commit();
+                fragmentTransaction.addToBackStack(addBackStack);
             fragmentTransaction.replace(contentFrame, fragment);
             fragmentTransaction.commit();
         } catch (Exception e){

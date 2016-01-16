@@ -19,8 +19,8 @@ import java.util.List;
  */
 public class FragListImpl {
 
-    Activity mContext;
-    FragmentListView mFragmentListView;
+    private Activity mContext;
+    private FragmentListView mFragmentListView;
 
     public FragListImpl (Activity mContext, FragmentListView mFragmentListView){
         this.mContext = mContext;

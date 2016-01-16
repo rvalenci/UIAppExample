@@ -13,4 +13,8 @@ public interface FragmentListView {
 
     public void showConnectionErrorMsg();
 
+    public void onPause();
+
+    public void onResume();
+
 }

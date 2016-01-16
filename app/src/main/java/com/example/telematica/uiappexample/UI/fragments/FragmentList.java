@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.example.telematica.uiappexample.R;
 import com.example.telematica.uiappexample.UI.views.FragmentListView;
 import com.example.telematica.uiappexample.models.Libro;
+import com.example.telematica.uiappexample.presenters.FragListImpl;
 import com.example.telematica.uiappexample.presenters.HttpServerConnection;
 import com.example.telematica.uiappexample.presenters.UIAdapter;
 
@@ -31,7 +32,7 @@ import java.util.List;
 public class FragmentList extends Fragment implements FragmentListView{
 
     private RecyclerView.LayoutManager mLayoutManager;
-    private FragmentList mFragmentList;
+    private FragListImpl mFragListImpl;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
 
@@ -54,7 +55,7 @@ public class FragmentList extends Fragment implements FragmentListView{
 
     public View onCreateView (LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle saveInstanceState){
         super.onCreateView(inflater, container, saveInstanceState);
-        View mainView = inflater.inflate(R.layout.activity_main, null);
+        View mainView = inflater.inflate(R.layout.frag_list, null);
 
         mRecyclerView = (RecyclerView) mainView.findViewById(R.id.content_frame);
 
@@ -63,7 +64,7 @@ public class FragmentList extends Fragment implements FragmentListView{
         mRecyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
+        mLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         new JSTask().execute();
