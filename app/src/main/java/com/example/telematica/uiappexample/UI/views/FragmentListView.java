@@ -11,6 +11,6 @@ import android.view.ViewGroup;
  */
 public interface FragmentListView {
 
-    public View onCreateView (LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle saveInstanceState);
+    public void showConnectionErrorMsg();
 
 }

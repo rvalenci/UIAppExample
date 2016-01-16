@@ -14,9 +14,16 @@ public class BaseActivity extends AppCompatActivity {
         this.contentFrame = contentFrame;
     }
 
-    public void switchContent (Fragment fragment, String addBackStack){
+    public void switchContent(Fragment fragment, String addBackStack) {
+        switchContent(fragment, addBackStack, -1, -1);
+    }
+
+    public void switchContent (Fragment fragment, String addBackStack, int In, int Out){
         try{
             final FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+
+            if (In > 0 && Out > 0)
+                fragmentTransaction.setCustomAnimations(In, Out);
 
             if(addBackStack != null)
                 fragmentTransaction.commit();
